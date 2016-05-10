@@ -1,7 +1,7 @@
 var app = angular.module("hackathon", ['ngRoute']);
 
 app.config(function ($routeProvider) {
-    $routeProvider.when("/home/:id", {
+    $routeProvider.when("/home", {
             templateUrl: "views/home.html",
             controller: "homeCon"
         }).when("/setting", {
@@ -9,8 +9,6 @@ app.config(function ($routeProvider) {
             controller: "settingCon"
         }).when("/about", {
             templateUrl: "views/about.html"
-        }).when("/progress", {
-            templateUrl: "views/progress.html"
         }).when("/remote", {
             templateUrl: "views/remote.html"
         }).otherwise({
