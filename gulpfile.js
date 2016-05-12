@@ -11,6 +11,7 @@ var connect = require('gulp-connect');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var uglify = require('gulp-uglify');
+var sftp = require('gulp-sftp');
 var assign = require('lodash').assign;
 var react = require('gulp-react');
 
@@ -70,4 +71,24 @@ gulp.task('compress', ['js:nowatch'], function() {
 		path.basename = 'app.min';
 	}))
 	.pipe(gulp.dest('example/'));
+});
+
+gulp.task('deploy-app-min', function () {
+	return gulp.src('example/app.min.js')
+		.pipe(sftp({
+			host: '140.134.26.72',
+			user: 'iecsiot',
+			pass: 'iecsiot1234',
+			remotePath: '/var/www/html/IoT/IoTWeb/'
+		}));
+});
+
+gulp.task('deploy', ['deploy-app-min'], function () {
+	return gulp.src('example/index.html')
+		.pipe(sftp({
+			host: '140.134.26.72',
+			user: 'iecsiot',
+			pass: 'iecsiot1234',
+			remotePath: '/var/www/html/IoT/IoTWeb/'
+		}));
 });
