@@ -44,7 +44,6 @@ function bundleGenerator(path, dest, name, isWatch) {
 // so you can run `gulp js` to build the file
 gulp.task('js', bundleGenerator('./example/app.jsx','./example',  'app', true));
 gulp.task('js:nowatch', bundleGenerator('./example/app.jsx', './example', 'app', false));
-gulp.task('js:release', bundleGenerator('./components/index.js', './lib', 'index', false));
 
 gulp.task('default', ['js'], function() {
 	connect.server({
