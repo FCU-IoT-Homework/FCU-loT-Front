@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "FCU-IOT-homework ",
   "scripts": {
-    "test": "node_modules/.bin/mochify --transform reactify --reporter spec test/_init.js test/**/*.jsx;node_modules/nightwatch/bin/nightwatch -e headless",
+    "test": "mocha test/.setup.js test/**/*-test.js",
     "unit_test": "node_modules/.bin/mochify --transform reactify --reporter spec test/_init.js test/**/*.jsx --ui tdd"
   },
   "main": "./lib",
