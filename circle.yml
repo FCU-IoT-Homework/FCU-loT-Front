@@ -1,0 +1,23 @@
+# circle.yml
+# deployment:
+  # staging: 分項名稱(辨認用)(唯一)
+  #   branch: branch 名稱; ex: master or [dev_alice, dev_bob, dev_carol]
+  #   owner: circleci (只允許專案 owner 部署)(option)
+  #   commands: 執行指令
+  #     - foo bar
+
+machine:
+  node:
+    version: 0.10.33    #(default-ver in ubuntu 12.04)
+
+# Circle will run npm test when you specify a test script in package.json.
+test:
+  override:
+    - npm test
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - gulp compress
+      - gulp deploy

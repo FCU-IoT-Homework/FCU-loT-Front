@@ -1,4 +1,5 @@
-# FCU-IoT-Homework (Development mode)
+# FCU-IoT-Homework [![CircleCI](https://circleci.com/gh/FCU-IoT-Homework/FCU-loT-Front.svg?style=shield)](https://circleci.com/gh/FCU-IoT-Homework/FCU-loT-Front)
+
 
 專案說明區塊 (待人補上)
 
@@ -36,7 +37,7 @@ $ gulp deploy
 # 測試使用方法
 | 指令 | 說明 | 備註
 | --- | --- | ---
-|npm test | 開始跑測試結果 | 有錯誤不可 merge 回 master上(考慮導入ＣＩ)
+|npm test | 開始跑測試結果 | 有錯誤不可 merge 回 master上
 
 > 測試學習用資料
 
