@@ -6,21 +6,21 @@
 
 brabra （日後補上）
 
-# 開發方式與遵守流程
-
-**_[採用 Github flow](http://blog.krdai.info/post/17485259496/github-flow)_**
+# 開發與遵守流程
 
 ```
 $ npm Install
 $ gulp
 ```
 
-# 測試方式
+**_[採用 Github flow](http://blog.krdai.info/post/17485259496/github-flow)_**
+
+# 測試
 ```
 $ npm test
 ```
 
-# 部署方式
+# 部署
 ```
 $ gulp compress
 $ gulp deploy
