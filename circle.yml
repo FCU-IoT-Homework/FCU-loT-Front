@@ -19,4 +19,5 @@ deployment:
   staging:
     branch: master
     commands:
+      - gulp compress
       - gulp deploy
