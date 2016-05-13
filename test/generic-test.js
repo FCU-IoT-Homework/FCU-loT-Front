@@ -1,5 +1,7 @@
+// include 需要的 library
 var React = require('react');
 var enzyme = require('enzyme');
+// include 需要測試的檔案
 var Generic = require('../example/views/generic.jsx');
 
 describe('<Generic />', function(){
@@ -20,6 +22,5 @@ describe('<Generic />', function(){
 		var wrapper = enzyme.shallow(<Generic />);
 		expect(wrapper.find('h3').length).to.equal(4);
 	});
-
 
 });
