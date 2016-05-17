@@ -4,11 +4,19 @@
 var React = require('react');
 var MDL = require('mdl-react');
 var Components = require('../components');
+var api = require('../js/api.js');
 
 module.exports = React.createClass({
 
-	render: function() {
+	getData : function(){
+		console.log('Call getDate()');
+		api.get('/return_recent.php', function(res){
+			console.log('humidity:', res.body[0].humidity);
+		});
+	},
 
+	render: function() {
+		this.getData()
 		var btnStyle = {
 			margin: '5px',
 			display: 'inline-block',
