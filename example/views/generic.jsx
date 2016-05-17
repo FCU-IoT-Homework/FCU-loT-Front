@@ -8,15 +8,14 @@ var api = require('../js/api.js');
 
 module.exports = React.createClass({
 
-	getData : function(){
-		console.log('Call getDate()');
-		api.get('/return_recent.php', function(res){
-			console.log('humidity:', res.body[0].humidity);
+	getData : function(query){
+		var result = api.get('/return_recent.php', function(res){
+			return (res.body[0][query]);
 		});
 	},
 
 	render: function() {
-		this.getData()
+		
 		var btnStyle = {
 			margin: '5px',
 			display: 'inline-block',
@@ -38,9 +37,7 @@ module.exports = React.createClass({
 					<MDL.GridCell col={3}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3>溫濕度</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle} >
-									Button
-								</MDL.Button>
+							<p>目前濕度：</p>
 						</MDL.Card>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
