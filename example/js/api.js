@@ -15,7 +15,7 @@ module.exports = {
 					console.error('Error in Generic.jsx: ', err);
 					return err;
 				}
-				return callback(res);
+				return callback(res.body, res.text);
 			});
 	},
 };

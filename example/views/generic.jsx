@@ -12,8 +12,9 @@ module.exports = React.createClass({
 		// 這裏應該使用 async 來做流程控制
 		// Ｑ：這無法把值純到 this.state.XXX 裡面
 		this.setState({
-			temperature: api.get('/return_recent.php', function(res){
-				return res.body[0]['temperature'];
+			temperature: api.get('/return_recent.php', function(body, text){
+				console.log('res.body==>', body[0]);
+				return body[0]['temperature'];
 			}),
 		});
 	},
