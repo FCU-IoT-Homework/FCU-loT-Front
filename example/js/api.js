@@ -1,6 +1,6 @@
 
 var request = require('superagent');
-var base = 'http://140.134.26.72/IoT/Hardware/web';
+var base = 'http://140.134.26.72/IoT/Hardware/API';
 module.exports = {
 
 	get : function(temp, callback){
