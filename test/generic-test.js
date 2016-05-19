@@ -8,7 +8,6 @@ describe('<Generic />', function(){
 
 	it('should render Title', function(){
 		var wrapper = enzyme.shallow(<Generic />);
-		// console.log(wrapper.debug());
 		expect(wrapper.find('DocTitle'));
 	});
 
@@ -18,9 +17,10 @@ describe('<Generic />', function(){
 		expect(wrapper.find('一般偵測'));
 	});
 
-	it('should render h3', function(){
+	it('should render 4個 MDL:GridCell', function(){
 		var wrapper = enzyme.shallow(<Generic />);
-		expect(wrapper.find('h3').length).to.equal(4);
+		// console.log(wrapper.debug());
+		expect(wrapper.find('MDL:GridCell').length).to.equal(4);
 	});
 
 });
