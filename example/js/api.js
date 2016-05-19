@@ -1,6 +1,6 @@
 
 var request = require('superagent');
-var base = 'http://140.134.26.72/IoT/Hardware/web';
+var base = 'http://140.134.26.72/IoT/Hardware/API';
 module.exports = {
 
 	get : function(temp, callback){
@@ -15,7 +15,7 @@ module.exports = {
 					console.error('Error in Generic.jsx: ', err);
 					return err;
 				}
-				return callback(res);
+				return callback(res.body, res.text);
 			});
 	},
 };

@@ -8,61 +8,45 @@ var api = require('../js/api.js');
 
 module.exports = React.createClass({
 
-	getData : function(query){
-		var result = api.get('/return_recent.php', function(res){
-			return (res.body[0][query]);
-		});
+	getInitialState : function(){
+		return {
+			temperature: 999,
+			humidity: 666,
+			soil: 333,
+		};
+	},
+
+	componentWillMount : function(){
+		this.getData();
+	},
+
+	getData : function(){
+		api.get('/return_recent.php', function(body, text){
+			this.setState({
+				'temperature': body[0]['temperature'],
+				'humidity': body[0]['humidity'],
+				'soil': body[0]['soil'],
+			});
+		}.bind(this));
 	},
 
 	render: function() {
-		
-		var btnStyle = {
-			margin: '5px',
-			display: 'inline-block',
-		};
-
-		var cardStyle = {
-			margin : '0 auto',
-			maxWidth : '300px',
-			width : '100%',
-			padding : '20px',
-			textAlign : 'center',
-		};
-
 		return (
 			<div style={{padding:'20px'}}>
 				<Components.DocTitle title="一般偵測"></Components.DocTitle>
 				<hr />
 				<MDL.Grid>
 					<MDL.GridCell col={3}>
-						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>溫濕度</h3>
-							<p>目前濕度：</p>
-						</MDL.Card>
+						<Components.CardWithValue title="溫度顯示器" text="目前溫度為：" value={this.state.temperature} />
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
-						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>土壤</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
-						</MDL.Card>
+						<Components.CardWithValue title="土壤顯示器" text="目前土壤為：" value={this.state.soil}/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
-						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>寵物</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
-						</MDL.Card>
+						<Components.CardWithValue title="濕度顯示器" text="目前濕度為：" value={this.state.humidity}/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
-						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>空氣污染</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
-						</MDL.Card>
+						<Components.CardWithBtn title="空氣污染(？" ></Components.CardWithBtn>
 					</MDL.GridCell>
 				</MDL.Grid>
 			</div>
