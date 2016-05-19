@@ -8,17 +8,6 @@ var api = require('../js/api.js');
 
 module.exports = React.createClass({
 
-	getData : function(){
-		// 這裏應該使用 async 來做流程控制
-		// Ｑ：這無法把值純到 this.state.XXX 裡面
-		this.setState({
-			temperature: api.get('/return_recent.php', function(body, text){
-				console.log('res.body==>', body[0]);
-				return body[0]['temperature'];
-			}),
-		});
-	},
-
 	getInitialState : function(){
 		return {
 			temperature: 999,
@@ -29,6 +18,16 @@ module.exports = React.createClass({
 
 	componentWillMount : function(){
 		this.getData();
+	},
+
+	getData : function(){
+		api.get('/return_recent.php', function(body, text){
+			this.setState({
+				'temperature': body[0]['temperature'],
+				'humidity': body[0]['humidity'],
+				'soil': body[0]['soil'],
+			});
+		}.bind(this));
 	},
 
 	render: function() {
