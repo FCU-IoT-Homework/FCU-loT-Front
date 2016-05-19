@@ -2,7 +2,7 @@
 var React = require('react');
 var enzyme = require('enzyme');
 // include 需要測試的檔案
-var Generic = require('../example/views/generic.jsx');
+var Generic = require('../app/views/generic.jsx');
 
 describe('<Generic />', function(){
 
