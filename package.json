@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "FCU-IOT-homework ",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*-test.js",
-    "unit_test": "node_modules/.bin/mochify --transform reactify --reporter spec test/_init.js test/**/*.jsx --ui tdd"
+    "test": "mocha test/.setup.js test/**/*-test.js"
   },
   "main": "./node_modules/mdl-react/lib",
   "repository": {
@@ -30,7 +29,6 @@
     "lodash": "~3.10.0"
   },
   "devDependencies": {
-    "async": "~1.5.2",
     "babel": "~5.8.3",
     "babel-preset-react": "~6.5.0",
     "babel-register": "~6.8.0",
@@ -46,12 +44,9 @@
     "gulp-sftp": "~0.1.5",
     "gulp-uglify": "~1.2.0",
     "gulp-util": "~3.0.5",
-    "jquery": "~2.1.4",
     "material-design-lite": "~1.0.4",
     "mdl-react": "0.0.25",
     "mocha": "~2.2.5",
-    "mochify": "~2.11.0",
-    "nightwatch": "~0.7.9",
     "node-jsdom": "~3.1.5",
     "react": "~0.13.3",
     "react-router": "~0.13.3",

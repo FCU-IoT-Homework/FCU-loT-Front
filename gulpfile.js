@@ -43,26 +43,26 @@ function bundleGenerator(path, dest, name, isWatch) {
 }
 
 // so you can run `gulp js` to build the file
-gulp.task('js', bundleGenerator('./example/app.jsx','./example',  'app', true));
-gulp.task('js:nowatch', bundleGenerator('./example/app.jsx', './example', 'app', false));
+gulp.task('js', bundleGenerator('./app/app.jsx','./app',  'app', true));
+gulp.task('js:nowatch', bundleGenerator('./app/app.jsx', './app', 'app', false));
 
 gulp.task('default', ['js'], function() {
 	connect.server({
-		root : 'example',
+		root : 'app',
 		livereload : true,
-		fallback : 'example/index.html',
+		fallback : 'app/index.html',
 	});
 });
 
 gulp.task('server', function() {
 	connect.server({
-		root : 'example',
-		fallback : 'example/index.html',
+		root : 'app',
+		fallback : 'app/index.html',
 	});
 });
 
 gulp.task('compress', ['js:nowatch'], function() {
-	return gulp.src('example/app.js')
+	return gulp.src('app/app.js')
 	.pipe(uglify({
 		compress : true,
 	}).on('error', gutil.log))
@@ -70,11 +70,11 @@ gulp.task('compress', ['js:nowatch'], function() {
 		path.extname = '.js';
 		path.basename = 'app.min';
 	}))
-	.pipe(gulp.dest('example/'));
+	.pipe(gulp.dest('deploy/'));
 });
 
 gulp.task('deploy-app-min', function () {
-	return gulp.src('example/app.min.js')
+	return gulp.src('deploy/app.min.js')
 		.pipe(sftp({
 			host: '140.134.26.72',
 			user: 'iecsiot',
@@ -84,7 +84,7 @@ gulp.task('deploy-app-min', function () {
 });
 
 gulp.task('deploy', ['deploy-app-min'], function () {
-	return gulp.src('example/index.html')
+	return gulp.src('deploy/index.html')
 		.pipe(sftp({
 			host: '140.134.26.72',
 			user: 'iecsiot',
