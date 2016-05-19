@@ -52,6 +52,7 @@ var Generic = require('./views/generic.jsx');
 var Appliances = require('./views/appliances.jsx');
 var Danger = require('./views/danger.jsx');
 var About = require('./views/about.jsx');
+var NotFound = require('./views/404.jsx');
 
 var routes = (
 	<Router.Route handler={App} >
@@ -60,6 +61,7 @@ var routes = (
 		<Router.Route name='appliances' path='appliances' handler={Appliances} />
 		<Router.Route name='danger' path='danger' handler={Danger} />
 		<Router.Route name='about' path='about' handler={About} />
+		<Router.NotFoundRoute handler={NotFound} />
 	</Router.Route>
 );
 
