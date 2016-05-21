@@ -523,7 +523,6 @@ module.exports = React.createClass({displayName: "exports",
 		}.bind(this));
 
 		api.get('/return_infrared.php', function(body, text){
-			console.log('==>body', body,'text', text);
 			this.setState({
 				'PIR1': this.isAnyOneAtHome(body[0]['pir1']),
 				'PIR2': this.isAnyOneAtHome(body[0]['pir2']),

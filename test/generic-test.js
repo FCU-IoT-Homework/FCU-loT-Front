@@ -20,7 +20,7 @@ describe('<Generic />', function(){
 	it('should render 4個 MDL:GridCell', function(){
 		var wrapper = enzyme.shallow(<Generic />);
 		// console.log(wrapper.debug());
-		expect(wrapper.find('MDL:GridCell').length).to.equal(4);
+		expect(wrapper.find('MDL:GridCell').length).to.equal(7);
 	});
 
 });
