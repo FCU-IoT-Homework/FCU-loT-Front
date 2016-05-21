@@ -13,6 +13,7 @@ module.exports = React.createClass({
 			temperature: 999,
 			humidity: 666,
 			soil: 333,
+			PM: 2333,
 		};
 	},
 
@@ -27,6 +28,12 @@ module.exports = React.createClass({
 				'humidity': body[0]['humidity'],
 				'soil': body[0]['soil'],
 			});
+		}.bind(this));
+
+		api.getTS('/feed/last.json?api_key=RBYK11ZDG0JO5FXV', function(body, text){
+			this.setState({
+				'PM': body['field1'],
+			})
 		}.bind(this));
 	},
 
@@ -46,7 +53,7 @@ module.exports = React.createClass({
 						<Components.CardWithValue title="濕度顯示器" text="目前濕度為：" value={this.state.humidity}/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
-						<Components.CardWithBtn title="空氣污染(？" ></Components.CardWithBtn>
+						<Components.CardWithValue title="細懸浮微粒" text="讀取數值為：" value={this.state.PM}/>
 					</MDL.GridCell>
 				</MDL.Grid>
 			</div>

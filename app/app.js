@@ -199,12 +199,29 @@ module.exports = {
 },{"./CardWithBtn.jsx":2,"./CardWithValue.jsx":3,"./DocTitle.jsx":4}],6:[function(require,module,exports){
 
 var request = require('superagent');
-var base = 'http://140.134.26.72/IoT/Hardware/API';
+var baseFCU = 'http://140.134.26.72/IoT/Hardware/API';
+var baseTS = 'https://api.thingspeak.com/channels/65175';
 module.exports = {
 
 	get : function(temp, callback){
 		request
-			.get(base + temp)
+			.get(baseFCU + temp)
+			.accept('application/json')
+			.end(function(err, res){
+				// console.debug('apiGet: res', res);
+				// console.debug('apiGet: res.body', res.body);
+				// console.debug('apiGet: res.text', res.text);
+				if(err){
+					console.error('Error in Generic.jsx: ', err);
+					return err;
+				}
+				return callback(res.body, res.text);
+			});
+	},
+
+	getTS : function(temp, callback){
+		request
+			.get(baseTS + temp)
 			.accept('application/json')
 			.end(function(err, res){
 				// console.debug('apiGet: res', res);
@@ -469,6 +486,7 @@ module.exports = React.createClass({displayName: "exports",
 			temperature: 999,
 			humidity: 666,
 			soil: 333,
+			PM: 2333,
 		};
 	},
 
@@ -483,6 +501,12 @@ module.exports = React.createClass({displayName: "exports",
 				'humidity': body[0]['humidity'],
 				'soil': body[0]['soil'],
 			});
+		}.bind(this));
+
+		api.getTS('/feed/last.json?api_key=RBYK11ZDG0JO5FXV', function(body, text){
+			this.setState({
+				'PM': body['field1'],
+			})
 		}.bind(this));
 	},
 
@@ -502,7 +526,7 @@ module.exports = React.createClass({displayName: "exports",
 						React.createElement(Components.CardWithValue, {title: "濕度顯示器", text: "目前濕度為：", value: this.state.humidity})
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(Components.CardWithBtn, {title: "空氣污染(？"})
+						React.createElement(Components.CardWithValue, {title: "細懸浮微粒", text: "讀取數值為：", value: this.state.PM})
 					)
 				)
 			)
