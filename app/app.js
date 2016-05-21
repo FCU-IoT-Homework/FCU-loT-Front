@@ -221,7 +221,7 @@ module.exports = {
 
 	getTS : function(temp, callback){
 		request
-			.get(base + temp)
+			.get(baseTS + temp)
 			.accept('application/json')
 			.end(function(err, res){
 				// console.debug('apiGet: res', res);
@@ -486,6 +486,7 @@ module.exports = React.createClass({displayName: "exports",
 			temperature: 999,
 			humidity: 666,
 			soil: 333,
+			PM: 2333,
 		};
 	},
 
@@ -519,7 +520,7 @@ module.exports = React.createClass({displayName: "exports",
 						React.createElement(Components.CardWithValue, {title: "濕度顯示器", text: "目前濕度為：", value: this.state.humidity})
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(Components.CardWithBtn, {title: "空氣污染(？"})
+						React.createElement(Components.CardWithValue, {title: "細懸浮微粒", text: "讀取數值為：", value: this.state.PM})
 					)
 				)
 			)

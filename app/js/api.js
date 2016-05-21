@@ -22,7 +22,7 @@ module.exports = {
 
 	getTS : function(temp, callback){
 		request
-			.get(base + temp)
+			.get(baseTS + temp)
 			.accept('application/json')
 			.end(function(err, res){
 				// console.debug('apiGet: res', res);
