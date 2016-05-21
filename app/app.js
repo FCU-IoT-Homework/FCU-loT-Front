@@ -400,60 +400,51 @@ module.exports = React.createClass({displayName: "exports",
 var React = require('react');
 var MDL = require('mdl-react');
 var Components = require('../components');
+var api = require('../js/api.js');
 
 module.exports = React.createClass({displayName: "exports",
 
+	getInitialState : function(){
+		return {
+			fire: 999,
+			gas: 666,
+			co: 333,
+			zone: 233,
+		};
+	},
+
+	componentWillMount : function(){
+		this.getData();
+	},
+
+	getData : function(){
+		api.get('/return_danger.php', function(body, text){
+			this.setState({
+				'fire': body[0]['fire'],
+				'gas': body[0]['gas'],
+				'co': body[0]['co'],
+				'zone': body[0]['zone']
+			});
+		}.bind(this));
+	},
+
 	render: function() {
-
-		var btnStyle = {
-			margin: '5px',
-			display: 'inline-block',
-		};
-
-		var cardStyle = {
-			margin : '0 auto',
-			maxWidth : '300px',
-			width : '100%',
-			padding : '20px',
-			textAlign : 'center',
-		};
-
 		return (
 			React.createElement("div", {style: {padding:'20px'}}, 
 				React.createElement(Components.DocTitle, {title: "危險偵測"}), 
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "瓦斯"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
-								)
-						)
+						React.createElement(Components.CardWithValue, {title: "瓦斯", text: "讀取數值為：", value: this.state.fire})
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "火災"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
-								)
-						)
+						React.createElement(Components.CardWithValue, {title: "火災", text: "讀取數值為：", value: this.state.gas})
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "一氧化碳"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
-								)
-						)
+						React.createElement(Components.CardWithValue, {title: "一氧化碳", text: "讀取數值為：", value: this.state.co})
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "限制區域"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
-								)
-						)
+						React.createElement(Components.CardWithValue, {title: "限制區域", text: "讀取數值為：", value: this.state.zone})
 					)
 				)
 			)
@@ -462,7 +453,7 @@ module.exports = React.createClass({displayName: "exports",
 
 });
 
-},{"../components":5,"mdl-react":43,"react":240}],12:[function(require,module,exports){
+},{"../components":5,"../js/api.js":6,"mdl-react":43,"react":240}],12:[function(require,module,exports){
 
 "use strict";
 
