@@ -487,11 +487,24 @@ module.exports = React.createClass({displayName: "exports",
 			humidity: 666,
 			soil: 333,
 			PM: 2333,
+			PIR1: '躲貓貓一號',
+			PIR2: '躲貓貓二號',
+			PIR3: '躲貓貓三號',
 		};
 	},
 
 	componentWillMount : function(){
 		this.getData();
+	},
+
+	isAnyOneAtHome : function(input) {
+		if(input === '1'){
+			return '有人在家';
+		} else if(input === '0'){
+			return '沒人在家';
+		} else {
+			return '工程師偷懶中';
+		}
 	},
 
 	getData : function(){
@@ -507,6 +520,15 @@ module.exports = React.createClass({displayName: "exports",
 			this.setState({
 				'PM': body['field1'],
 			})
+		}.bind(this));
+
+		api.get('/return_infrared.php', function(body, text){
+			console.log('==>body', body,'text', text);
+			this.setState({
+				'PIR1': this.isAnyOneAtHome(body[0]['pir1']),
+				'PIR2': this.isAnyOneAtHome(body[0]['pir2']),
+				'PIR3': this.isAnyOneAtHome(body[0]['pir3']),
+			});
 		}.bind(this));
 	},
 
@@ -527,6 +549,15 @@ module.exports = React.createClass({displayName: "exports",
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(Components.CardWithValue, {title: "細懸浮微粒", text: "讀取數值為：", value: this.state.PM})
+					), 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(Components.CardWithValue, {title: "房間一番", text: "有沒有人在家～", value: this.state.PIR1})
+					), 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(Components.CardWithValue, {title: "房間二番", text: "有沒有人在家～", value: this.state.PIR2})
+					), 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(Components.CardWithValue, {title: "房間三番", text: "有沒有人在家～", value: this.state.PIR3})
 					)
 				)
 			)
