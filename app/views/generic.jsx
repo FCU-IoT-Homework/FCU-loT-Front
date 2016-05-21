@@ -29,6 +29,12 @@ module.exports = React.createClass({
 				'soil': body[0]['soil'],
 			});
 		}.bind(this));
+
+		api.getTS('/feed/last.json?api_key=RBYK11ZDG0JO5FXV', function(body, text){
+			this.setState({
+				'PM': body['field1'],
+			})
+		}.bind(this));
 	},
 
 	render: function() {
