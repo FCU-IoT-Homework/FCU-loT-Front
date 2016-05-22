@@ -4,8 +4,87 @@
 var React = require('react');
 var MDL = require('mdl-react');
 var Components = require('../components');
+var api = require('../js/api.js');
 
 module.exports = React.createClass({
+
+	getInitialState: function() {
+		return {
+			clickTimes: 0,
+		};
+	},
+
+	onClickFan : function() {
+		// control Fan
+		var query = {
+			'action' : this.state.clickTimes,
+		};
+		api.get('/phpMQTT/infrared_transmitter.php', query, function(body, text){
+			// 中心思想 this.state.clickTimes = (this.state.clickTimes == 3) ? 0 : this.state.clickTimes;
+			if(this.state.clickTimes == 3){
+				this.setState({
+					clickTimes : 0,
+				});
+			} else {
+				this.setState({
+					clickTimes : ++this.state.clickTimes,
+				});
+			}
+		}.bind(this));
+	},
+
+	onChangeAir : function(e) {
+		// control air_conditioning when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/air_conditioning.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeDoor : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/door.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeL0 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+			'id' : 0,
+		};
+		api.get('/phpMQTT/light.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeL1 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+			'id' : 1,
+		};
+		api.get('/phpMQTT/light.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeL2 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+			'id' : 2,
+		};
+		api.get('/phpMQTT/light.php', query, function(body, text){
+
+		});
+	},
 
 	render: function() {
 
@@ -19,7 +98,7 @@ module.exports = React.createClass({
 			maxWidth : '300px',
 			width : '100%',
 			padding : '20px',
-			textAlign : 'center',
+			// textAlign : 'center',
 		};
 
 		return (
@@ -29,34 +108,67 @@ module.exports = React.createClass({
 				<MDL.Grid>
 					<MDL.GridCell col={3}>
 						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>冷氣</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle} >
-									Button
+							<h3 style ={{textAlign : 'center'}}>紅外線風扇</h3>
+								<MDL.Button
+									type="RaisedButton"
+									style={btnStyle}
+								>
+									<button
+										onClick={this.onClickFan}
+									>
+									action = {this.state.clickTimes}
+									</button>
 								</MDL.Button>
 						</MDL.Card>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
 						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>電燈</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
+							<h3 style ={{textAlign : 'center'}}>冷氣</h3>
+								<MDL.Toggle
+									type="switch"
+									text="開關"
+									onChange={this.onChangeAir}
+								/>
 						</MDL.Card>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
 						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>門</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
+							<h3 style ={{textAlign : 'center'}}>門</h3>
+								<MDL.Toggle
+									type="switch"
+									text="開關"
+									onChange={this.onChangeDoor}
+								/>
 						</MDL.Card>
 					</MDL.GridCell>
 					<MDL.GridCell col={3}>
 						<MDL.Card shadow={4} style={cardStyle}>
-							<h3>熱水器</h3>
-								<MDL.Button type="RaisedButton" style={btnStyle}>
-									Button
-								</MDL.Button>
+							<h3 style ={{textAlign : 'center'}}>燈零番</h3>
+								<MDL.Toggle
+									type="switch"
+									text="開關"
+									onChange={this.onChangeL0}
+								/>
+						</MDL.Card>
+					</MDL.GridCell>
+					<MDL.GridCell col={3}>
+						<MDL.Card shadow={4} style={cardStyle}>
+							<h3 style ={{textAlign : 'center'}}>燈一番</h3>
+								<MDL.Toggle
+									type="switch"
+									text="開關"
+									onChange={this.onChangeL1}
+								/>
+						</MDL.Card>
+					</MDL.GridCell>
+					<MDL.GridCell col={3}>
+						<MDL.Card shadow={4} style={cardStyle}>
+							<h3 style ={{textAlign : 'center'}}>燈二番</h3>
+								<MDL.Toggle
+									type="switch"
+									text="開關"
+									onChange={this.onChangeL2}
+								/>
 						</MDL.Card>
 					</MDL.GridCell>
 				</MDL.Grid>
