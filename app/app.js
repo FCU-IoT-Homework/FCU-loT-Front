@@ -380,6 +380,36 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
 
+	onChangeL1 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/door.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeL2 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/door.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeL3 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/door.php', query, function(body, text){
+
+		});
+	},
+
 	render: function() {
 
 		var btnStyle = {
