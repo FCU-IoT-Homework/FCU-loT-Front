@@ -88,8 +88,6 @@ module.exports = React.createClass({
 
 	render: function() {
 
-		console.log(this.state.clickTimes);
-
 		var btnStyle = {
 			margin: '5px',
 			display: 'inline-block',
