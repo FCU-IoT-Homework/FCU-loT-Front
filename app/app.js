@@ -360,6 +360,25 @@ var api = require('../js/api.js');
 
 module.exports = React.createClass({displayName: "exports",
 
+	getInitialState: function() {
+		return {
+			clickTimes: 0,
+		};
+	},
+
+	onClickFan : function() {
+		// control Fan
+		var query = {
+			'action' : this.state.clickTimes,
+		};
+		api.get('/phpMQTT/infrared_transmitter.php', query, function(body, text){
+			this.state.clickTimes = (this.state.clickTimes == 3) ? 0 : this.state.clickTimes;
+			this.setState({
+				clickTimes : ++this.state.clickTimes,
+			});
+		}.bind(this));
+	},
+
 	onChangeAir : function(e) {
 		// control air_conditioning when e = true:open||false:close
 		var query = {
@@ -380,12 +399,24 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
 
+	onChangeL0 : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+			'id' : 0,
+		};
+		api.get('/phpMQTT/light.php', query, function(body, text){
+
+		});
+	},
+
 	onChangeL1 : function(e) {
 		// control door when e = true:open||false:close
 		var query = {
 			'action' : (e === true) ? 1 : 0,
+			'id' : 1,
 		};
-		api.get('/phpMQTT/door.php', query, function(body, text){
+		api.get('/phpMQTT/light.php', query, function(body, text){
 
 		});
 	},
@@ -394,23 +425,16 @@ module.exports = React.createClass({displayName: "exports",
 		// control door when e = true:open||false:close
 		var query = {
 			'action' : (e === true) ? 1 : 0,
+			'id' : 2,
 		};
-		api.get('/phpMQTT/door.php', query, function(body, text){
-
-		});
-	},
-
-	onChangeL3 : function(e) {
-		// control door when e = true:open||false:close
-		var query = {
-			'action' : (e === true) ? 1 : 0,
-		};
-		api.get('/phpMQTT/door.php', query, function(body, text){
+		api.get('/phpMQTT/light.php', query, function(body, text){
 
 		});
 	},
 
 	render: function() {
+
+		console.log(this.state.clickTimes);
 
 		var btnStyle = {
 			margin: '5px',
@@ -430,6 +454,21 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement(Components.DocTitle, {title: "控制家電"}), 
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
+							React.createElement("h3", {style: {textAlign : 'center'}}, "紅外線風扇"), 
+								React.createElement(MDL.Button, {
+									type: "RaisedButton", 
+									style: btnStyle
+								}, 
+									React.createElement("button", {
+										onClick: this.onClickFan
+									}, 
+									this.state.clickTimes
+									)
+								)
+						)
+					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "冷氣"), 
@@ -452,6 +491,16 @@ module.exports = React.createClass({displayName: "exports",
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
+							React.createElement("h3", {style: {textAlign : 'center'}}, "燈零番"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeL0}
+								)
+						)
+					), 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "燈一番"), 
 								React.createElement(MDL.Toggle, {
 									type: "switch", 
@@ -467,16 +516,6 @@ module.exports = React.createClass({displayName: "exports",
 									type: "switch", 
 									text: "開關", 
 									onChange: this.onChangeL2}
-								)
-						)
-					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", {style: {textAlign : 'center'}}, "燈三番"), 
-								React.createElement(MDL.Toggle, {
-									type: "switch", 
-									text: "開關", 
-									onChange: this.onChangeL3}
 								)
 						)
 					)
