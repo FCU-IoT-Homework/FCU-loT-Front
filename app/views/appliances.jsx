@@ -20,10 +20,16 @@ module.exports = React.createClass({
 			'action' : this.state.clickTimes,
 		};
 		api.get('/phpMQTT/infrared_transmitter.php', query, function(body, text){
-			this.state.clickTimes = (this.state.clickTimes == 3) ? 0 : this.state.clickTimes;
-			this.setState({
-				clickTimes : ++this.state.clickTimes,
-			});
+			// 中心思想 this.state.clickTimes = (this.state.clickTimes == 3) ? 0 : this.state.clickTimes;
+			if(this.state.clickTimes == 3){
+				this.setState({
+					clickTimes : 0,
+				});
+			} else {
+				this.setState({
+					clickTimes : ++this.state.clickTimes,
+				});
+			}
 		}.bind(this));
 	},
 
@@ -112,7 +118,7 @@ module.exports = React.createClass({
 									<button
 										onClick={this.onClickFan}
 									>
-									{this.state.clickTimes}
+									action = {this.state.clickTimes}
 									</button>
 								</MDL.Button>
 						</MDL.Card>
