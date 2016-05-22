@@ -4,7 +4,7 @@ var enzyme = require('enzyme');
 // include 需要測試的檔案
 var Appliances = require('../app/views/appliances.jsx');
 
-describe('<Danger />', function(){
+describe('<Appliances />', function(){
 
 	it('should render Title', function(){
 		var wrapper = enzyme.shallow(<Appliances />);
@@ -17,7 +17,7 @@ describe('<Danger />', function(){
 		expect(wrapper.find('控制家電'));
 	});
 
-	it('should render 4個 MDL:GridCell', function(){
+	it('should render 6個 MDL:GridCell', function(){
 		var wrapper = enzyme.shallow(<Appliances />);
 		// console.log(wrapper.debug());
 		expect(wrapper.find('MDL:GridCell').length).to.equal(6);
