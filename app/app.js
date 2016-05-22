@@ -201,27 +201,35 @@ module.exports = {
 var request = require('superagent');
 var baseFCU = 'http://140.134.26.72/IoT/Hardware/API';
 var baseTS = 'https://api.thingspeak.com/channels/65175';
+
 module.exports = {
 
-	get : function(temp, callback){
+	get : function(tempUrl, query, callback){
+
+		if( typeof(query) !== 'object'){
+			// 檢查 query 是否有被正確傳遞
+			// ref => http://xiayuanfeng.iteye.com/blog/301453
+			callback = query;	// callback 也是個函數，所以可以傳值[取代query]
+			query = null;	//不加這行，會把整個 callback 當參數傳遞[把query消掉]
+		}
+
 		request
-			.get(baseFCU + temp)
+			.get(baseFCU + tempUrl)
+			.query(query)
 			.accept('application/json')
 			.end(function(err, res){
-				// console.debug('apiGet: res', res);
-				// console.debug('apiGet: res.body', res.body);
-				// console.debug('apiGet: res.text', res.text);
 				if(err){
-					console.error('Error in Generic.jsx: ', err);
-					return err;
+					console.error(err);
+					console.error('Error raw response:', err.rawResponse);
+					return callback(err);
 				}
 				return callback(res.body, res.text);
 			});
 	},
 
-	getTS : function(temp, callback){
+	getTS : function(tempUrl, callback){
 		request
-			.get(baseTS + temp)
+			.get(baseTS + tempUrl)
 			.accept('application/json')
 			.end(function(err, res){
 				// console.debug('apiGet: res', res);
@@ -348,8 +356,29 @@ module.exports = React.createClass({displayName: "exports",
 var React = require('react');
 var MDL = require('mdl-react');
 var Components = require('../components');
+var api = require('../js/api.js');
 
 module.exports = React.createClass({displayName: "exports",
+
+	onChangeAir : function(e) {
+		// control air_conditioning when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/air_conditioning.php', query, function(body, text){
+
+		});
+	},
+
+	onChangeDoor : function(e) {
+		// control door when e = true:open||false:close
+		var query = {
+			'action' : (e === true) ? 1 : 0,
+		};
+		api.get('/phpMQTT/door.php', query, function(body, text){
+
+		});
+	},
 
 	render: function() {
 
@@ -363,7 +392,7 @@ module.exports = React.createClass({displayName: "exports",
 			maxWidth : '300px',
 			width : '100%',
 			padding : '20px',
-			textAlign : 'center',
+			// textAlign : 'center',
 		};
 
 		return (
@@ -373,33 +402,51 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "冷氣"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
+							React.createElement("h3", {style: {textAlign : 'center'}}, "冷氣"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeAir}
 								)
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "電燈"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
+							React.createElement("h3", {style: {textAlign : 'center'}}, "門"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeDoor}
 								)
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "門"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
+							React.createElement("h3", {style: {textAlign : 'center'}}, "燈一番"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeL1}
 								)
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-							React.createElement("h3", null, "熱水器"), 
-								React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-									"Button"
+							React.createElement("h3", {style: {textAlign : 'center'}}, "燈二番"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeL2}
+								)
+						)
+					), 
+					React.createElement(MDL.GridCell, {col: 3}, 
+						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
+							React.createElement("h3", {style: {textAlign : 'center'}}, "燈三番"), 
+								React.createElement(MDL.Toggle, {
+									type: "switch", 
+									text: "開關", 
+									onChange: this.onChangeL3}
 								)
 						)
 					)
@@ -410,7 +457,7 @@ module.exports = React.createClass({displayName: "exports",
 
 });
 
-},{"../components":5,"mdl-react":43,"react":240}],11:[function(require,module,exports){
+},{"../components":5,"../js/api.js":6,"mdl-react":43,"react":240}],11:[function(require,module,exports){
 
 "use strict";
 
