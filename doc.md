@@ -1,3 +1,78 @@
+#傳送資料
+###紅外線
+*路徑:	http://140.134.26.72/IoT/Hardware/API/return_infrared.php
+
+<table>
+    <tr>
+      <td>欄位名稱</td>
+      <td>資料型態</td>
+      <td>單位</td>
+      <td>備註</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>int</td>
+      <td>無</td>
+      <td>Primary Key</td>
+    </tr>
+    <tr>
+      <td>pir1</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+    <tr>
+      <td>pir2</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+    <tr>
+      <td>pir3</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+</table>
+
+###溫溼度  
+最新一筆資料
+
+*路徑:	http://140.134.26.72/IoT/Hardware/API/return_infrared.php
+
+<table>
+    <tr>
+      <td>欄位名稱</td>
+      <td>資料型態</td>
+      <td>單位</td>
+      <td>備註</td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>int</td>
+      <td>無</td>
+      <td>Primary Key</td>
+    </tr>
+    <tr>
+      <td>pir1</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+    <tr>
+      <td>pir2</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+    <tr>
+      <td>pir3</td>
+      <td>int</td>
+      <td>無</td>
+      <td>偵測房間內是否有人</td>
+    </tr>
+</table>
+
 # 控制Arduino       
 2016.5.22
 
