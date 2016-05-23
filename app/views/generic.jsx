@@ -64,25 +64,25 @@ module.exports = React.createClass({
 				<Components.DocTitle title="一般偵測"></Components.DocTitle>
 				<hr />
 				<MDL.Grid>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="溫度顯示器" text="目前溫度為：" value={this.state.temperature} />
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="土壤顯示器" text="目前土壤為：" value={this.state.soil}/>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="濕度顯示器" text="目前濕度為：" value={this.state.humidity}/>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="細懸浮微粒" text="讀取數值為：" value={this.state.PM}/>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="房間一番" text="有沒有人在家～" value={this.state.PIR1}/>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="房間二番" text="有沒有人在家～" value={this.state.PIR2}/>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue title="房間三番" text="有沒有人在家～" value={this.state.PIR3}/>
 					</MDL.GridCell>
 				</MDL.Grid>
