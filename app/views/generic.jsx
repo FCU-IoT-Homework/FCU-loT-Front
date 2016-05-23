@@ -97,13 +97,25 @@ module.exports = React.createClass({
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="房間一番" text="有沒有人在家～" value={this.state.PIR1}/>
+						<Components.CardWithValue
+							title="房間一番"
+							text="有沒有人在家～"
+							value={this.state.PIR1}
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="房間二番" text="有沒有人在家～" value={this.state.PIR2}/>
+						<Components.CardWithValue
+							title="房間二番"
+							text="有沒有人在家～"
+							value={this.state.PIR2}
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="房間三番" text="有沒有人在家～" value={this.state.PIR3}/>
+						<Components.CardWithValue
+							title="房間三番"
+							text="有沒有人在家～"
+							value={this.state.PIR3}
+						/>
 					</MDL.GridCell>
 				</MDL.Grid>
 			</div>

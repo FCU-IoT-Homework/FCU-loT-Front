@@ -707,13 +707,25 @@ module.exports = React.createClass({displayName: "exports",
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "房間一番", text: "有沒有人在家～", value: this.state.PIR1})
+						React.createElement(Components.CardWithValue, {
+							title: "房間一番", 
+							text: "有沒有人在家～", 
+							value: this.state.PIR1}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "房間二番", text: "有沒有人在家～", value: this.state.PIR2})
+						React.createElement(Components.CardWithValue, {
+							title: "房間二番", 
+							text: "有沒有人在家～", 
+							value: this.state.PIR2}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "房間三番", text: "有沒有人在家～", value: this.state.PIR3})
+						React.createElement(Components.CardWithValue, {
+							title: "房間三番", 
+							text: "有沒有人在家～", 
+							value: this.state.PIR3}
+						)
 					)
 				)
 			)
