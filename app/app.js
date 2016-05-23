@@ -458,7 +458,7 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement(Components.DocTitle, {title: "控制家電"}), 
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "紅外線風扇"), 
 								React.createElement(MDL.Button, {
@@ -473,7 +473,7 @@ module.exports = React.createClass({displayName: "exports",
 								)
 						)
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "冷氣"), 
 								React.createElement(MDL.Toggle, {
@@ -483,7 +483,7 @@ module.exports = React.createClass({displayName: "exports",
 								)
 						)
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "門"), 
 								React.createElement(MDL.Toggle, {
@@ -493,7 +493,7 @@ module.exports = React.createClass({displayName: "exports",
 								)
 						)
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "燈零番"), 
 								React.createElement(MDL.Toggle, {
@@ -503,7 +503,7 @@ module.exports = React.createClass({displayName: "exports",
 								)
 						)
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "燈一番"), 
 								React.createElement(MDL.Toggle, {
@@ -513,7 +513,7 @@ module.exports = React.createClass({displayName: "exports",
 								)
 						)
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 							React.createElement("h3", {style: {textAlign : 'center'}}, "燈二番"), 
 								React.createElement(MDL.Toggle, {
@@ -571,16 +571,16 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement(Components.DocTitle, {title: "危險偵測"}), 
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "瓦斯", text: "讀取數值為：", value: this.state.fire})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "火災", text: "讀取數值為：", value: this.state.gas})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "一氧化碳", text: "讀取數值為：", value: this.state.co})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "限制區域", text: "讀取數值為：", value: this.state.zone})
 					)
 				)

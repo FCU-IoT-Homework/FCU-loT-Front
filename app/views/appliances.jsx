@@ -106,7 +106,7 @@ module.exports = React.createClass({
 				<Components.DocTitle title="控制家電"></Components.DocTitle>
 				<hr />
 				<MDL.Grid>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>紅外線風扇</h3>
 								<MDL.Button
@@ -121,7 +121,7 @@ module.exports = React.createClass({
 								</MDL.Button>
 						</MDL.Card>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>冷氣</h3>
 								<MDL.Toggle
@@ -131,7 +131,7 @@ module.exports = React.createClass({
 								/>
 						</MDL.Card>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>門</h3>
 								<MDL.Toggle
@@ -141,7 +141,7 @@ module.exports = React.createClass({
 								/>
 						</MDL.Card>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>燈零番</h3>
 								<MDL.Toggle
@@ -151,7 +151,7 @@ module.exports = React.createClass({
 								/>
 						</MDL.Card>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>燈一番</h3>
 								<MDL.Toggle
@@ -161,7 +161,7 @@ module.exports = React.createClass({
 								/>
 						</MDL.Card>
 					</MDL.GridCell>
-					<MDL.GridCell col={3}>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
 							<h3 style ={{textAlign : 'center'}}>燈二番</h3>
 								<MDL.Toggle
