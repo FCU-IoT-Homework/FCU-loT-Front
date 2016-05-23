@@ -40,7 +40,6 @@ soil        | float     | %        | 土壤濕度
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_danger.php
 
-<table>
 欄位名稱 | 資料型態 | 單位 | 備註
 ---------|----------|------|-----
 count    | count    | 無   | Primary Key
