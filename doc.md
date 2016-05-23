@@ -50,7 +50,7 @@
     <tr>
       <td>timestamp</td>
       <td>timestamp</td>
-      <td></td>
+      <td>年-月-日</td>
       <td>時間</td>
     </tr>
     <tr>
