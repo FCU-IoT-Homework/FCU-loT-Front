@@ -2,157 +2,52 @@
 ###紅外線
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_infrared.php
 
-<table>
-    <tr>
-      <td>欄位名稱</td>
-      <td>資料型態</td>
-      <td>單位</td>
-      <td>備註</td>
-    </tr>
-    <tr>
-      <td>count</td>
-      <td>int</td>
-      <td>無</td>
-      <td>Primary Key</td>
-    </tr>
-    <tr>
-      <td>pir1</td>
-      <td>int</td>
-      <td>無</td>
-      <td>偵測房間內是否有人</td>
-    </tr>
-    <tr>
-      <td>pir2</td>
-      <td>int</td>
-      <td>無</td>
-      <td>偵測房間內是否有人</td>
-    </tr>
-    <tr>
-      <td>pir3</td>
-      <td>int</td>
-      <td>無</td>
-      <td>偵測房間內是否有人</td>
-    </tr>
-</table>
+
+欄位名稱 | 資料型態 | 單位 | 備註
+---------|----------|------|-----
+count    | int      | 無   | Primary Key
+pir1     | int      | 無   | 偵測房間內是否有人
+pir2     | int      | 無   | 偵測房間內是否有人
+pir3     | int      | 無   | 偵測房間內是否有人
+
 
 ###溫溼度  
 最新一筆資料
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_recent.php
 
-<table>
-    <tr>
-      <td>欄位名稱</td>
-      <td>資料型態</td>
-      <td>單位</td>
-      <td>備註</td>
-    </tr>
-    <tr>
-      <td>timestamp</td>
-      <td>timestamp</td>
-      <td>年-月-日</td>
-      <td>時間</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>float</td>
-      <td>°C</td>
-      <td>溫度</td>
-    </tr>
-    <tr>
-      <td>humidity</td>
-      <td>float</td>
-      <td>%</td>
-      <td>濕度</td>
-    </tr>
-    <tr>
-      <td>soil</td>
-      <td>int</td>
-      <td>%</td>
-      <td>土壤濕度</td>
-    </tr>
-</table>
+欄位名稱    | 資料型態  | 單位     | 備註
+------------|-----------|----------|-----
+timestamp   | timestamp | 年-月-日 | 時間
+temperature | float     | °C       | 溫度
+humidity    | float     | %        | 濕度
+soil        | float     | %        | 土壤濕度
+
 
 ###溫溼度  
 全部資料
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_tem_hum_all.php
 
-<table>
-    <tr>
-      <td>欄位名稱</td>
-      <td>資料型態</td>
-      <td>單位</td>
-      <td>備註</td>
-    </tr>
-    <tr>
-      <td>timestamp</td>
-      <td>timestamp</td>
-      <td></td>
-      <td>時間</td>
-    </tr>
-    <tr>
-      <td>temperature</td>
-      <td>float</td>
-      <td>°C</td>
-      <td>溫度</td>
-    </tr>
-    <tr>
-      <td>humidity</td>
-      <td>float</td>
-      <td>%</td>
-      <td>濕度</td>
-    </tr>
-    <tr>
-      <td>soil</td>
-      <td>int</td>
-      <td>%</td>
-      <td>土壤濕度</td>
-    </tr>
-</table>
+欄位名稱    | 資料型態  | 單位     | 備註
+------------|-----------|----------|-----
+timestamp   | timestamp | 年-月-日 | 時間
+temperature | float     | °C       | 溫度
+humidity    | float     | %        | 濕度
+soil        | float     | %        | 土壤濕度
 
 ###危險感測  
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_danger.php
 
 <table>
-    <tr>
-      <td>欄位名稱</td>
-      <td>資料型態</td>
-      <td>單位</td>
-      <td>備註</td>
-    </tr>
-    <tr>
-      <td>count</td>
-      <td>int</td>
-      <td>無</td>
-      <td>Primary Key</td>
-    </tr>
-    <tr>
-      <td>fire</td>
-      <td>int</td>
-      <td></td>
-      <td>火災</td>
-    </tr>
-    <tr>
-      <td>gas</td>
-      <td>int</td>
-      <td></td>
-      <td>瓦斯</td>
-    </tr>
-    <tr>
-      <td>zone</td>
-      <td>tinyint</td>
-      <td></td>
-      <td>限制區域</td>
-    </tr>
-    <tr>
-      <td>co</td>
-      <td>int</td>
-      <td></td>
-      <td>一氧化碳</td>
-    </tr>
-</table>
+欄位名稱 | 資料型態 | 單位 | 備註
+---------|----------|------|-----
+count    | count    | 無   | Primary Key
+fire     | int      |      | 火災
+gas      | int      |      | 瓦斯
+zone     | tinyint  |      | 限制區域
+co       | int      |      | 一氧化碳
 
 # 控制Arduino       
 2016.5.22
