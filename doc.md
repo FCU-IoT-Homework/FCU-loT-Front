@@ -2,10 +2,6 @@
 ###紅外線
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_infrared.php
 
-| 欄位名稱 | 資料型態 | 單位 | 備註 |
-
-| A | B | C | D
-| V | C | S | A
 <table>
     <tr>
       <td>欄位名稱</td>
