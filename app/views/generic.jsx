@@ -59,6 +59,11 @@ module.exports = React.createClass({
 	},
 
 	render: function() {
+
+		var bgColor1 = (this.state.PIR1 === '有人在家') ? '#12FF34' : '#b92929';
+		var bgColor2 = (this.state.PIR2 === '有人在家') ? '#12FF34' : '#b92929';
+		var bgColor3 = (this.state.PIR3 === '有人在家') ? '#12FF34' : '#b92929';
+
 		return (
 			<div style={{padding:'20px'}}>
 				<Components.DocTitle title="一般偵測"></Components.DocTitle>
@@ -94,6 +99,7 @@ module.exports = React.createClass({
 							text="讀取數值為："
 							value={this.state.PM}
 							unit="ppm"
+							style={{backgroundColor: PMColor}}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
@@ -101,6 +107,7 @@ module.exports = React.createClass({
 							title="房間一番"
 							text="有沒有人在家～"
 							value={this.state.PIR1}
+							style={{backgroundColor: bgColor1}}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
@@ -108,6 +115,7 @@ module.exports = React.createClass({
 							title="房間二番"
 							text="有沒有人在家～"
 							value={this.state.PIR2}
+							style={{backgroundColor: bgColor2}}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
@@ -115,6 +123,7 @@ module.exports = React.createClass({
 							title="房間三番"
 							text="有沒有人在家～"
 							value={this.state.PIR3}
+							style={{backgroundColor: bgColor3}}
 						/>
 					</MDL.GridCell>
 				</MDL.Grid>
