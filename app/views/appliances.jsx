@@ -11,7 +11,12 @@ module.exports = React.createClass({
 	getInitialState: function() {
 		return {
 			clickTimes: 0,
+			fanStatus: '風扇狀態',
 		};
+	},
+
+	componentWillMount: function() {
+		this.onClickFan();
 	},
 
 	onClickFan : function() {
@@ -19,15 +24,23 @@ module.exports = React.createClass({
 		var query = {
 			'action' : this.state.clickTimes,
 		};
+		var fanStatusAry = [
+			'關',
+			'開',
+			'弱',
+			'強',
+		];
 		api.get('/phpMQTT/infrared_transmitter.php', query, function(body, text){
 			// 中心思想 this.state.clickTimes = (this.state.clickTimes == 3) ? 0 : this.state.clickTimes;
 			if(this.state.clickTimes == 3){
 				this.setState({
 					clickTimes : 0,
+					fanStatus : fanStatusAry[3],
 				});
 			} else {
 				this.setState({
 					clickTimes : ++this.state.clickTimes,
+					fanStatus : fanStatusAry[this.state.clickTimes-1],
 				});
 			}
 		}.bind(this));
@@ -108,7 +121,7 @@ module.exports = React.createClass({
 				<MDL.Grid>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card shadow={4} style={cardStyle}>
-							<h3 style ={{textAlign : 'center'}}>紅外線風扇</h3>
+							<h3 style ={{textAlign : 'center'}}>紅外線風扇({this.state.fanStatus})</h3>
 								<MDL.Button
 									type="RaisedButton"
 									style={btnStyle}
@@ -116,7 +129,7 @@ module.exports = React.createClass({
 									<button
 										onClick={this.onClickFan}
 									>
-									action = {this.state.clickTimes}
+									下一步
 									</button>
 								</MDL.Button>
 						</MDL.Card>
