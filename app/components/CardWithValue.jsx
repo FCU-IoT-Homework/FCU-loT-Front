@@ -18,11 +18,6 @@ module.exports = React.createClass({
 
 	render: function() {
 
-		var btnStyle = {
-			margin: '5px',
-			display: 'inline-block',
-		};
-
 		var cardStyle = {
 			margin : '0 auto',
 			maxWidth : '300px',
@@ -32,7 +27,7 @@ module.exports = React.createClass({
 		};
 
 		return (
-			<MDL.Card shadow={4} style={cardStyle}>
+			<MDL.Card shadow={4} style={Object.assign(cardStyle, this.props.style)}>
 				<h3>{this.props.title}</h3>
 					<p>{this.props.text}{this.props.value} {this.props.unit}</p>
 			</MDL.Card>

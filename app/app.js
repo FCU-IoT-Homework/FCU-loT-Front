@@ -143,11 +143,6 @@ module.exports = React.createClass({
 
 	render: function() {
 
-		var btnStyle = {
-			margin: '5px',
-			display: 'inline-block',
-		};
-
 		var cardStyle = {
 			margin : '0 auto',
 			maxWidth : '300px',
@@ -157,7 +152,7 @@ module.exports = React.createClass({
 		};
 
 		return (
-			React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
+			React.createElement(MDL.Card, {shadow: 4, style: Object.assign(cardStyle, this.props.style)}, 
 				React.createElement("h3", null, this.props.title), 
 					React.createElement("p", null, this.props.text, this.props.value, " ", this.props.unit)
 			)
@@ -682,6 +677,11 @@ module.exports = React.createClass({displayName: "exports",
 	},
 
 	render: function() {
+
+		var bgColor1 = (this.state.PIR1 === '有人在家') ? '#12FF34' : '#b92929';
+		var bgColor2 = (this.state.PIR2 === '有人在家') ? '#12FF34' : '#b92929';
+		var bgColor3 = (this.state.PIR3 === '有人在家') ? '#12FF34' : '#b92929';
+
 		return (
 			React.createElement("div", {style: {padding:'20px'}}, 
 				React.createElement(Components.DocTitle, {title: "一般偵測"}), 
@@ -723,21 +723,24 @@ module.exports = React.createClass({displayName: "exports",
 						React.createElement(Components.CardWithValue, {
 							title: "房間一番", 
 							text: "有沒有人在家～", 
-							value: this.state.PIR1}
+							value: this.state.PIR1, 
+							style: {backgroundColor: bgColor1}}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {
 							title: "房間二番", 
 							text: "有沒有人在家～", 
-							value: this.state.PIR2}
+							value: this.state.PIR2, 
+							style: {backgroundColor: bgColor2}}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {
 							title: "房間三番", 
 							text: "有沒有人在家～", 
-							value: this.state.PIR3}
+							value: this.state.PIR3, 
+							style: {backgroundColor: bgColor3}}
 						)
 					)
 				)
