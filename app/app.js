@@ -657,25 +657,25 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement(Components.DocTitle, {title: "一般偵測"}), 
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "溫度顯示器", text: "目前溫度為：", value: this.state.temperature})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "土壤顯示器", text: "目前土壤為：", value: this.state.soil})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "濕度顯示器", text: "目前濕度為：", value: this.state.humidity})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "細懸浮微粒", text: "讀取數值為：", value: this.state.PM})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "房間一番", text: "有沒有人在家～", value: this.state.PIR1})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "房間二番", text: "有沒有人在家～", value: this.state.PIR2})
 					), 
-					React.createElement(MDL.GridCell, {col: 3}, 
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "房間三番", text: "有沒有人在家～", value: this.state.PIR3})
 					)
 				)
