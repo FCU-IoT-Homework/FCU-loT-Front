@@ -149,7 +149,7 @@
     <tr>
       <td>co</td>
       <td>int</td>
-      <td>%</td>
+      <td></td>
       <td>一氧化碳</td>
     </tr>
 </table>
