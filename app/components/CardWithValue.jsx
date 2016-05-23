@@ -12,6 +12,7 @@ module.exports = React.createClass({
 			title: '卡片標題',
 			text: '顯示文字：',
 			value : '數值',
+			unit: null,
 		};
 	},
 
@@ -33,7 +34,7 @@ module.exports = React.createClass({
 		return (
 			<MDL.Card shadow={4} style={cardStyle}>
 				<h3>{this.props.title}</h3>
-					<p>{this.props.text}{this.props.value}</p>
+					<p>{this.props.text}{this.props.value} {this.props.unit}</p>
 			</MDL.Card>
 		);
 	},

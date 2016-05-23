@@ -137,6 +137,7 @@ module.exports = React.createClass({
 			title: '卡片標題',
 			text: '顯示文字：',
 			value : '數值',
+			unit: null,
 		};
 	},
 
@@ -158,7 +159,7 @@ module.exports = React.createClass({
 		return (
 			React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
 				React.createElement("h3", null, this.props.title), 
-					React.createElement("p", null, this.props.text, this.props.value)
+					React.createElement("p", null, this.props.text, this.props.value, " ", this.props.unit)
 			)
 		);
 	},
@@ -572,16 +573,32 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "瓦斯", text: "讀取數值為：", value: this.state.fire})
+						React.createElement(Components.CardWithValue, {
+							title: "瓦斯", 
+							text: "讀取數值為：", 
+							value: this.state.fire}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "火災", text: "讀取數值為：", value: this.state.gas})
+						React.createElement(Components.CardWithValue, {
+							title: "火災", 
+							text: "讀取數值為：", 
+							value: this.state.gas}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "一氧化碳", text: "讀取數值為：", value: this.state.co})
+						React.createElement(Components.CardWithValue, {
+							title: "一氧化碳", 
+							text: "讀取數值為：", 
+							value: this.state.co}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "限制區域", text: "讀取數值為：", value: this.state.zone})
+						React.createElement(Components.CardWithValue, {
+							title: "限制區域", 
+							text: "讀取數值為：", 
+							value: this.state.zone}
+						)
 					)
 				)
 			)
@@ -658,16 +675,36 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement("hr", null), 
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "溫度顯示器", text: "目前溫度為：", value: this.state.temperature})
+						React.createElement(Components.CardWithValue, {
+							title: "溫度狀態", 
+							text: "目前溫度為：", 
+							value: this.state.temperature, 
+							unit: "度"}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "土壤顯示器", text: "目前土壤為：", value: this.state.soil})
+						React.createElement(Components.CardWithValue, {
+							title: "土壤狀態", 
+							text: "目前土壤為：", 
+							value: this.state.soil, 
+							unit: "%"}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "濕度顯示器", text: "目前濕度為：", value: this.state.humidity})
+						React.createElement(Components.CardWithValue, {
+							title: "濕度狀態", 
+							text: "目前濕度為：", 
+							value: this.state.humidity, 
+							unit: "%"}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(Components.CardWithValue, {title: "細懸浮微粒", text: "讀取數值為：", value: this.state.PM})
+						React.createElement(Components.CardWithValue, {
+							title: "細懸浮微粒", 
+							text: "讀取數值為：", 
+							value: this.state.PM, 
+							unit: "ppm"}
+						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {title: "房間一番", text: "有沒有人在家～", value: this.state.PIR1})

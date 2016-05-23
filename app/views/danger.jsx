@@ -39,16 +39,32 @@ module.exports = React.createClass({
 				<hr />
 				<MDL.Grid>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="瓦斯" text="讀取數值為：" value={this.state.fire} />
+						<Components.CardWithValue
+							title="瓦斯"
+							text="讀取數值為："
+							value={this.state.fire}
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="火災" text="讀取數值為：" value={this.state.gas}/>
+						<Components.CardWithValue
+							title="火災"
+							text="讀取數值為："
+							value={this.state.gas}
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="一氧化碳" text="讀取數值為：" value={this.state.co}/>
+						<Components.CardWithValue
+							title="一氧化碳"
+							text="讀取數值為："
+							value={this.state.co}
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<Components.CardWithValue title="限制區域" text="讀取數值為：" value={this.state.zone}/>
+						<Components.CardWithValue
+							title="限制區域"
+							text="讀取數值為："
+							value={this.state.zone}
+						/>
 					</MDL.GridCell>
 				</MDL.Grid>
 			</div>
