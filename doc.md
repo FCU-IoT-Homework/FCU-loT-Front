@@ -58,10 +58,13 @@ co       | int      |      | 一氧化碳
 *傳送方式: GET
 
 *需要傳送參數 action
-  - action = 0   代表 off 
-  - action = 1   代表 on
-  - action = 2   代表 strength
-  - action = 3   代表 weak
+
+參數名稱    | 代表意義  
+------------|-----------
+action = 0  | off 
+action = 1  | on     
+action = 2  | strength     
+action = 3  | weak     
 
 ### 冷氣
 *路徑:http://140.134.26.72/IoT/Hardware/API/phpMQTT/air_conditioning.php
@@ -69,8 +72,11 @@ co       | int      |      | 一氧化碳
 *傳送方式: GET
 
 *需要傳送參數 action
-  - action = 0   代表 off 
-  - action = 1   代表 on
+
+參數名稱    | 代表意義  
+------------|-----------
+action = 0  | off 
+action = 1  | on     
 
 ### 門
 *路徑:http://140.134.26.72/IoT/Hardware/API/phpMQTT/door.php
@@ -78,8 +84,11 @@ co       | int      |      | 一氧化碳
 *傳送方式: GET
 
 *需要傳送參數 action
-  - action = 0   代表 off 
-  - action = 1   代表 on
+
+參數名稱    | 代表意義  
+------------|-----------
+action = 0  | off 
+action = 1  | on     
 
 ### 燈
 *路徑:http://140.134.26.72/IoT/Hardware/API/phpMQTT/light.php
@@ -87,8 +96,12 @@ co       | int      |      | 一氧化碳
 *傳送方式: GET
 
 *需要傳送參數 action, id
-  - action = 0   代表 off 
-  - action = 1   代表 on
-  - id = 0   代表 light_0
-  - id = 1   代表 light_1
-  - id = 2   代表 light_2
+
+參數名稱    | 代表意義  
+------------|-----------
+action = 0  | off 
+action = 1  | on     
+id = 0      | light_0     
+id = 1      | light_1  
+id = 2      | light_2 
+
