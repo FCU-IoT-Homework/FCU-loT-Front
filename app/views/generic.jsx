@@ -99,7 +99,6 @@ module.exports = React.createClass({
 							text="讀取數值為："
 							value={this.state.PM}
 							unit="ppm"
-							style={{backgroundColor: PMColor}}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>

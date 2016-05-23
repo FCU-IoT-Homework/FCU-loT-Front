@@ -716,8 +716,7 @@ module.exports = React.createClass({displayName: "exports",
 							title: "細懸浮微粒", 
 							text: "讀取數值為：", 
 							value: this.state.PM, 
-							unit: "ppm", 
-							style: {backgroundColor: PMColor}}
+							unit: "ppm"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
