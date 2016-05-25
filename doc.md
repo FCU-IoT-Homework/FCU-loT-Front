@@ -16,12 +16,12 @@ pir3     | int      | 無   | 偵測房間內是否有人
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_recent.php
 
-欄位名稱    | 資料型態  | 單位     | 備註
-------------|-----------|----------|-----
-timestamp   | timestamp | 年-月-日 | 時間
-temperature | float     | °C       | 溫度
-humidity    | float     | %        | 濕度
-soil        | float     | %        | 土壤濕度
+欄位名稱    | 資料型態  | 單位              | 備註
+------------|-----------|-------------------|-----
+timestamp   | timestamp | 年-月-日-時-分-秒 | 時間
+temperature | float     | °C                | 溫度
+humidity    | float     | %                 | 濕度
+soil        | float     | %                 | 土壤濕度
 
 
 ###溫溼度  
@@ -29,12 +29,12 @@ soil        | float     | %        | 土壤濕度
 
 *路徑:	http://140.134.26.72/IoT/Hardware/API/return_tem_hum_all.php
 
-欄位名稱    | 資料型態  | 單位     | 備註
-------------|-----------|----------|-----
-timestamp   | timestamp | 年-月-日 | 時間
-temperature | float     | °C       | 溫度
-humidity    | float     | %        | 濕度
-soil        | float     | %        | 土壤濕度
+欄位名稱    | 資料型態  | 單位              | 備註
+------------|-----------|-------------------|-----
+timestamp   | timestamp | 年-月-日-時-分-秒 | 時間
+temperature | float     | °C                | 溫度
+humidity    | float     | %                 | 濕度
+soil        | float     | %                 | 土壤濕度
 
 ###危險感測  
 
