@@ -316,27 +316,21 @@ module.exports = React.createClass({displayName: "exports",
 	render: function() {
 		var titleStyle = {
 			color: '#fff',
-			background : 'url("http://i.imgur.com/L5YFTxg.png") bottom right 15% no-repeat #46B6AC',
+			background : 'url("https://avatars2.githubusercontent.com/u/5138488?v=3&s=460") top right 15% no-repeat #46B6AC',
 		};
 		return (
 			React.createElement("div", {style: {padding:'20px'}}, 
 				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 3}, 
-						React.createElement(MDL.Card, {width: "320", height: "320", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "199", style: titleStyle}, 
-								"頭像放置處"
+					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
+						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
+							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle}, 
+								"許恆修"
 							), 
-							React.createElement(MDL.CardSupportingText, null, 
-								"個人製作區域"
-							), 
-							React.createElement(MDL.CardAction, {border: true}, 
-								React.createElement(MDL.Button, {type: "FlatButton", 
-									isRipple: true, 
-									isPrimary: true
-							 	}, "其他連結（EX:github or blogger）"
-								)
+							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
+								React.createElement("p", null, "前端工程師")
 							)
 						)
+
 					)
 				)
 			)
@@ -584,14 +578,14 @@ module.exports = React.createClass({displayName: "exports",
 						React.createElement(Components.CardWithValue, {
 							title: "瓦斯", 
 							text: "讀取數值為：", 
-							value: this.state.fire}
+							value: this.state.gas}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardWithValue, {
 							title: "火災", 
 							text: "讀取數值為：", 
-							value: this.state.gas}
+							value: this.state.fire}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
