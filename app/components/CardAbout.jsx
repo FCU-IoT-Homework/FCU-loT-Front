@@ -10,7 +10,7 @@ module.exports = React.createClass({
 	getDefaultProps: function() {
 		return {
 			title: '人物名稱',
-			text : '職稱名稱',
+			text : '職稱描述',
 			avatar: 'https://avatars2.githubusercontent.com/u/5138488?v=3&s=460',
 			github: 'https://github.com/Heng-xiu',
 		};

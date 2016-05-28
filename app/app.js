@@ -92,7 +92,7 @@ module.exports = React.createClass({
 	getDefaultProps: function() {
 		return {
 			title: '人物名稱',
-			text : '職稱名稱',
+			text : '職稱描述',
 			avatar: 'https://avatars2.githubusercontent.com/u/5138488?v=3&s=460',
 			github: 'https://github.com/Heng-xiu',
 		};
@@ -361,112 +361,71 @@ var Components = require('../components');
 module.exports = React.createClass({displayName: "exports",
 
 	render: function() {
-
-		var titleStyle2 = {
-			color: '#fff',
-			background : 'url("https://avatars1.githubusercontent.com/u/11376362?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle3 = {
-			color: '#fff',
-			background : 'url("https://avatars3.githubusercontent.com/u/13153677?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle4 = {
-			color: '#fff',
-			background : 'url("https://avatars3.githubusercontent.com/u/5456589?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle5 = {
-			color: '#fff',
-			background : 'url("https://avatars1.githubusercontent.com/u/16376653?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle6 = {
-			color: '#fff',
-			background : 'url("https://avatars3.githubusercontent.com/u/16316583?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle7 = {
-			color: '#fff',
-			background : 'url("https://avatars2.githubusercontent.com/u/3949245?v=3&s=460") center / cover #46B6AC',
-		};
-		var titleStyle8 = {
-			color: '#fff',
-			background : 'url("https://avatars3.githubusercontent.com/u/10772111?v=3&s=460") center / cover #46B6AC',
-		};
 		return (
 			React.createElement("div", {style: {padding:'20px'}}, 
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardAbout, {
 							title: "許恆修", 
-							text: "職稱：前端工程師"}
+							text: "職稱：前端工程師", 
+							github: "https://github.com/Heng-xiu", 
+							avatar: "https://avatars2.githubusercontent.com/u/5138488?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle2}, 
-								"荊輔翔"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：Arduino 大神")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "荊輔翔", 
+							text: "職稱：Arduino 大神", 
+							github: "https://github.com/SCWhite", 
+							avatar: "https://avatars1.githubusercontent.com/u/11376362?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle7}, 
-								"陳靚德"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：靚德大神")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "陳靚德", 
+							text: "職稱：靚德大神", 
+							github: "https://github.com/danny50610", 
+							avatar: "https://avatars2.githubusercontent.com/u/3949245?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle3}, 
-								"邱勝敏"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：後端工程師")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "邱勝敏", 
+							text: "職稱：後端工程師", 
+							github: "https://github.com/s951010sam", 
+							avatar: "https://avatars3.githubusercontent.com/u/13153677?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle4}, 
-								"林伯丞"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：全端工程師")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "林伯丞", 
+							text: "職稱：全端工程師", 
+							github: "https://github.com/ds934118", 
+							avatar: "https://avatars3.githubusercontent.com/u/5456589?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle5}, 
-								"林佩萱"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：後端工程師")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "林佩萱", 
+							text: "職稱：後端工程師", 
+							github: "https://github.com/sdf789", 
+							avatar: "https://avatars1.githubusercontent.com/u/16376653?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle6}, 
-								"蔡秉承"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：前端工程師")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "蔡秉承", 
+							text: "職稱：前端工程師", 
+							github: "https://github.com/TLOGBen", 
+							avatar: "https://avatars3.githubusercontent.com/u/16316583?v=3&s=460"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle8}, 
-								"簡邱偉"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: {fontSize:"20px"}}, 
-								React.createElement("p", null, "職稱：前端工程師")
-							)
+						React.createElement(Components.CardAbout, {
+							title: "簡邱偉", 
+							text: "職稱：前端工程師", 
+							github: "https://github.com/toculin38", 
+							avatar: "https://avatars3.githubusercontent.com/u/10772111?v=3&s=460"}
 						)
 					)
 				)
