@@ -414,7 +414,7 @@ module.exports = React.createClass({displayName: "exports",
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
 						React.createElement(Components.CardAbout, {
-							title: "蔡秉承", 
+							title: "蔡秉辰", 
 							text: "職稱：前端工程師", 
 							github: "https://github.com/TLOGBen", 
 							avatar: "https://avatars3.githubusercontent.com/u/16316583?v=3&s=460"}
