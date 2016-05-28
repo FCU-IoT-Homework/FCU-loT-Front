@@ -87,36 +87,38 @@ var MDL = require('mdl-react');
 
 module.exports = React.createClass({
 
-	displayName : 'CardWithBtn',
+	displayName : 'CardAbout',
 
 	getDefaultProps: function() {
 		return {
-			title: '卡片標題',
-			text : '按鈕名稱',
+			title: '人物名稱',
+			text : '職稱名稱',
+			avatar: 'https://avatars2.githubusercontent.com/u/5138488?v=3&s=460',
+			github: 'https://github.com/Heng-xiu',
 		};
 	},
 
 	render: function() {
 
-		var btnStyle = {
-			margin: '5px',
-			display: 'inline-block',
+		var supportTextStyle = {
+			fontSize: "20px",
 		};
 
-		var cardStyle = {
-			margin : '0 auto',
-			maxWidth : '300px',
-			width : '100%',
-			padding : '20px',
-			textAlign : 'center',
+		var titleStyle = {
+			color: '#fff',
+			background :  'url(' + this.props.avatar + ')' + 'center / cover #46B6AC',
 		};
 
 		return (
-			React.createElement(MDL.Card, {shadow: 4, style: cardStyle}, 
-				React.createElement("h3", null, this.props.title), 
-					React.createElement(MDL.Button, {type: "RaisedButton", style: btnStyle}, 
-						this.props.text
-					)
+			React.createElement("a", {href: this.props.github, target: "_blank", style: {textDecoration:'none'}}, 
+			React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
+				React.createElement(MDL.CardTitle, {height: "460", style: titleStyle}, 
+					this.props.title
+				), 
+				React.createElement(MDL.CardSupportingText, {style: supportTextStyle}, 
+					React.createElement("p", null, this.props.text)
+				)
+			)
 			)
 		);
 	},
@@ -354,17 +356,12 @@ module.exports = React.createClass({displayName: "exports",
 
 var React = require('react');
 var MDL = require('mdl-react');
+var Components = require('../components');
 
 module.exports = React.createClass({displayName: "exports",
 
 	render: function() {
-		var supportTextStyle = {
-			fontSize: "20px",
-		};
-		var titleStyle1 = {
-			color: '#fff',
-			background : 'url("https://avatars2.githubusercontent.com/u/5138488?v=3&s=460") center / cover #46B6AC',
-		};
+
 		var titleStyle2 = {
 			color: '#fff',
 			background : 'url("https://avatars1.githubusercontent.com/u/11376362?v=3&s=460") center / cover #46B6AC',
@@ -397,15 +394,9 @@ module.exports = React.createClass({displayName: "exports",
 			React.createElement("div", {style: {padding:'20px'}}, 
 				React.createElement(MDL.Grid, null, 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
-						React.createElement("a", {href: "www.google.com.tw", style: {textDecoration:'none'}}, 
-						React.createElement(MDL.Card, {maxWidth: "300", width: "100%", height: "300", shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "460", style: titleStyle1}, 
-								"許恆修"
-							), 
-							React.createElement(MDL.CardSupportingText, {style: supportTextStyle}, 
-								React.createElement("p", null, "職稱：前端工程師")
-							)
-						)
+						React.createElement(Components.CardAbout, {
+							title: "許恆修", 
+							text: "職稱：前端工程師"}
 						)
 					), 
 					React.createElement(MDL.GridCell, {col: 3, colPhone: 4, colTablet: 4}, 
@@ -485,7 +476,7 @@ module.exports = React.createClass({displayName: "exports",
 
 });
 
-},{"mdl-react":44,"react":241}],11:[function(require,module,exports){
+},{"../components":6,"mdl-react":44,"react":241}],11:[function(require,module,exports){
 
 "use strict";
 

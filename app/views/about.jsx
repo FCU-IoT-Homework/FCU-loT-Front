@@ -3,17 +3,12 @@
 
 var React = require('react');
 var MDL = require('mdl-react');
+var Components = require('../components');
 
 module.exports = React.createClass({
 
 	render: function() {
-		var supportTextStyle = {
-			fontSize: "20px",
-		};
-		var titleStyle1 = {
-			color: '#fff',
-			background : 'url("https://avatars2.githubusercontent.com/u/5138488?v=3&s=460") center / cover #46B6AC',
-		};
+
 		var titleStyle2 = {
 			color: '#fff',
 			background : 'url("https://avatars1.githubusercontent.com/u/11376362?v=3&s=460") center / cover #46B6AC',
@@ -46,16 +41,10 @@ module.exports = React.createClass({
 			<div style={{padding:'20px'}}>
 				<MDL.Grid>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
-						<a href="www.google.com.tw" style={{textDecoration:'none'}}>
-						<MDL.Card maxWidth='300' width='100%' height='300' shadow={8}>
-							<MDL.CardTitle height="460" style={titleStyle1}>
-								許恆修
-							</MDL.CardTitle>
-							<MDL.CardSupportingText style={supportTextStyle}>
-								<p>職稱：前端工程師</p>
-							</MDL.CardSupportingText>
-						</MDL.Card>
-						</a>
+						<Components.CardAbout
+							title = '許恆修'
+							text = '職稱：前端工程師'
+						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<MDL.Card maxWidth='300' width='100%' height='300' shadow={8}>
