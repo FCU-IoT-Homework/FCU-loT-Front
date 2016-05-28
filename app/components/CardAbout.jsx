@@ -25,6 +25,7 @@ module.exports = React.createClass({
 		var titleStyle = {
 			color: '#fff',
 			background :  'url(' + this.props.avatar + ')' + 'center / cover #46B6AC',
+			fontWeight: 'bolder',
 		};
 
 		return (
