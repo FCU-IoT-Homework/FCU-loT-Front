@@ -29,8 +29,8 @@ module.exports = React.createClass({
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardAbout
-							title = '陳靚德'
-							text = '職稱：靚德大神'
+							title = '陳靖德'
+							text = '職稱：靖德大神'
 							github = 'https://github.com/danny50610'
 							avatar = 'https://avatars2.githubusercontent.com/u/3949245?v=3&s=460'
 						/>
@@ -45,7 +45,7 @@ module.exports = React.createClass({
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardAbout
-							title = '林伯丞'
+							title = '林柏丞'
 							text = '職稱：全端工程師'
 							github = 'https://github.com/ds934118'
 							avatar = 'https://avatars3.githubusercontent.com/u/5456589?v=3&s=460'
