@@ -42,14 +42,14 @@ module.exports = React.createClass({
 						<Components.CardWithValue
 							title="瓦斯"
 							text="讀取數值為："
-							value={this.state.fire}
+							value={this.state.gas}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
 						<Components.CardWithValue
 							title="火災"
 							text="讀取數值為："
-							value={this.state.gas}
+							value={this.state.fire}
 						/>
 					</MDL.GridCell>
 					<MDL.GridCell col={3} colPhone={4} colTablet={4}>

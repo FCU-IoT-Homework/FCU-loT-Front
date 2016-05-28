@@ -3,33 +3,77 @@
 
 var React = require('react');
 var MDL = require('mdl-react');
+var Components = require('../components');
 
 module.exports = React.createClass({
 
 	render: function() {
-		var titleStyle = {
-			color: '#fff',
-			background : 'url("http://i.imgur.com/L5YFTxg.png") bottom right 15% no-repeat #46B6AC',
-		};
 		return (
 			<div style={{padding:'20px'}}>
 				<MDL.Grid>
-					<MDL.GridCell col={3}>
-						<MDL.Card width='320' height='320' shadow={8}>
-							<MDL.CardTitle height="199" style={titleStyle}>
-								頭像放置處
-							</MDL.CardTitle>
-							<MDL.CardSupportingText>
-								個人製作區域
-							</MDL.CardSupportingText>
-							<MDL.CardAction border={true}>
-								<MDL.Button type="FlatButton"
-									isRipple={true}
-									isPrimary={true}
-							 	>其他連結（EX:github or blogger）
-								</MDL.Button>
-							</MDL.CardAction>
-						</MDL.Card>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '許恆修'
+							text = '職稱：前端工程師'
+							github = 'https://github.com/Heng-xiu'
+							avatar = 'https://avatars2.githubusercontent.com/u/5138488?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '荊輔翔'
+							text = '職稱：Arduino 大神'
+							github = 'https://github.com/SCWhite'
+							avatar = 'https://avatars1.githubusercontent.com/u/11376362?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '陳靚德'
+							text = '職稱：靚德大神'
+							github = 'https://github.com/danny50610'
+							avatar = 'https://avatars2.githubusercontent.com/u/3949245?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '邱勝敏'
+							text = '職稱：後端工程師'
+							github = 'https://github.com/s951010sam'
+							avatar = 'https://avatars3.githubusercontent.com/u/13153677?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '林伯丞'
+							text = '職稱：全端工程師'
+							github = 'https://github.com/ds934118'
+							avatar = 'https://avatars3.githubusercontent.com/u/5456589?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '林佩萱'
+							text = '職稱：後端工程師'
+							github = 'https://github.com/sdf789'
+							avatar = 'https://avatars1.githubusercontent.com/u/16376653?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '蔡秉承'
+							text = '職稱：前端工程師'
+							github = 'https://github.com/TLOGBen'
+							avatar = 'https://avatars3.githubusercontent.com/u/16316583?v=3&s=460'
+						/>
+					</MDL.GridCell>
+					<MDL.GridCell col={3} colPhone={4} colTablet={4}>
+						<Components.CardAbout
+							title = '簡邱偉'
+							text = '職稱：前端工程師'
+							github = 'https://github.com/toculin38'
+							avatar = 'https://avatars3.githubusercontent.com/u/10772111?v=3&s=460'
+						/>
 					</MDL.GridCell>
 				</MDL.Grid>
 			</div>
