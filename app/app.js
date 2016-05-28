@@ -30,7 +30,7 @@ var App = React.createClass({displayName: "App",
 			React.createElement("a", {href: "#generic"}, "一般偵測"),
 			React.createElement("a", {href: "#appliances"}, "控制家電"),
 			React.createElement("a", {href: "#danger"}, "危險偵測"),
-			React.createElement("a", {href: "#about"}, "製作團隊？"),
+			React.createElement("a", {href: "#about"}, "開發團隊"),
 		];
 		return (
 			React.createElement(MDL.Layout, {ref: "layout", 

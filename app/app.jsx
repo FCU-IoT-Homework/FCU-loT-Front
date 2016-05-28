@@ -28,7 +28,7 @@ var App = React.createClass({
 			<a href='#generic'>一般偵測</a>,
 			<a href='#appliances'>控制家電</a>,
 			<a href='#danger'>危險偵測</a>,
-			<a href='#about'>製作團隊？</a>,
+			<a href='#about'>開發團隊</a>,
 		];
 		return (
 			<MDL.Layout ref='layout'
